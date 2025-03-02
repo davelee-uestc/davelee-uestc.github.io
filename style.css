@@ -1,0 +1,246 @@
+* {
+    font-family: Arial, sans-serif;
+}
+p{
+    font-size: 1em;
+}
+body {
+    min-width: 500px;
+    margin: 0;
+}
+ul li{
+    line-height: 2;
+}
+.ai{
+    line-height: inherit !important;
+}
+.inactive {
+    color: gray !important;
+    text-decoration: none !important;
+}
+.inactive:hover {
+    color: gray !important;
+    text-decoration: none !important;
+}
+
+
+.header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.social-media {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 10px;
+} 
+
+.social-media a {
+    text-decoration: none !important;
+    color: inherit;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.social-media a:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px !important;
+    padding: 0 0;
+    margin: 0 auto;
+}
+
+.photo-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.photo {
+    flex: 0 0 200px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-right: 20px;
+}
+
+.photo img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+.photo-info-container p{
+    padding: 0;
+    margin: 0;
+    line-height: 1.7;
+}
+.info {
+    flex: 1;
+}
+
+.paper-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.paper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.image {
+    flex: 0 0 200px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.paper-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.paper-info .title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.paper-info .authors, .paper-info .func{
+    margin-bottom: 0px;
+}
+
+.paper-info .func a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.paper-info .func a:hover {
+    text-decoration: underline;
+}
+
+@media (max-aspect-ratio: 11/9) {
+    .content{
+        padding: 0 20px;
+    }
+    .photo-info-container {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .photo, .info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .photo img {
+        width: auto;
+        height: 100%;
+    }
+    .photo-info-container .info{
+        text-align: center;
+    }
+    .paper {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .image {
+        width: 100%;
+    }
+
+    .paper-info {
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+}
+/* pc */
+@media (min-aspect-ratio: 11/9) {
+    .photo-info-container {
+        margin-top: 15px;
+        flex-direction: row;
+    }
+    .photo {
+        flex: 0 0 200px;
+    }
+
+    .info {
+        flex: 1;
+    }
+
+    .paper {
+        flex-direction: row;
+    }
+
+    .paper-info {
+        padding-left: 20px;
+        padding-top: 0;
+    }
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .social-media {
+        margin-top: 0;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.footer{
+    text-align: center;
+}
