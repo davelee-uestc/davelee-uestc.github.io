@@ -1,148 +1,561 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=yes">
-        <title>WEIWEI LI (李巍炜) | PhD Student at University of Electronic Science and Technology of China (UESTC)</title>
-        <meta name="keywords" content="WEIWEI LI, 李巍炜, UESTC, University of Electronic Science and Technology of China, PhD, research">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="
-        https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
-        " rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiwei Li (李巍炜) | PhD Candidate</title>
+    <meta name="description" content="PhD Candidate at UESTC specializing in Multimodal LLMs and Robust Machine Learning.">
+    <meta name="keywords" content="WEIWEI LI, 李巍炜, UESTC, PhD, Computer Vision, Machine Learning">
+    
+    <style>
+        /* --- MODERN RESET & VARIABLES --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
+            --text-tertiary: #718096;
+            --border-color: #e2e8f0;
+
+            /* ENERGETIC COLOR PALETTE */
+            --primary-color: #2563eb; /* Vibrant Blue */
+            --secondary-color: #8b5cf6; /* Vibrant Violet */
+            --accent-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --tint-bg: #eff6ff; 
+            --tint-border: #bfdbfe;
+
+            --max-width: 960px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-round: 50px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        a:hover { color: var(--primary-color); }
         
-        <link href="https://cdn.bootcdn.net/ajax/libs/academicons/1.9.4/css/academicons.min.css" rel="stylesheet">
-        <script src="
-https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
-"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
-            <div class="container-fluid">
-              <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <!-- <li class="navbar-item"><a href="#news">News</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                </ul>
-               
-              </div>
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 4rem;
+            padding-top: 1rem;
+        }
+
+        nav a {
+            margin-left: 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        nav a:hover { color: var(--primary-color); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+
+        .profile-img-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+            padding: 6px;
+            background: var(--bg-color);
+            border: 1px solid var(--tint-border);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero-text .chinese-name { font-weight: 400; color: var(--text-secondary); -webkit-text-fill-color: var(--text-secondary); }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .hero-subtitle span { display: block; margin-bottom: 0.25rem; }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--tint-bg);
+            border-radius: var(--radius-round);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid var(--tint-border);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .social-btn:hover {
+            background-color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transform: translateY(-2px);
+            background-image: linear-gradient(white, white), var(--accent-gradient);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* --- SECTIONS GENERAL --- */
+        section { margin-bottom: 5rem; scroll-margin-top: 3rem; }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            position: relative;
+            color: var(--text-main);
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .content-text { color: var(--text-secondary); font-size: 1.1rem; }
+        .content-text a { color: var(--primary-color); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+
+        /* --- PUBLICATIONS --- */
+        .paper {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            align-items: start;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .paper:last-child { border-bottom: none; }
+
+        .paper-img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .paper-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .paper:hover .paper-img { transform: translateY(-3px) scale(1.01); }
+
+        .paper-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            display: block;
+            line-height: 1.4;
+        }
+        .paper-title:hover { color: var(--primary-color); }
+
+        .paper-authors { font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .me { font-weight: 700; color: var(--text-main); border-bottom: 2px solid var(--tint-border); }
+        
+        .paper-venue { 
+            font-size: 0.95rem; 
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 1rem; 
+        }
+
+        .paper-links a {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            padding: 0.4rem 0.8rem;
+            background: var(--tint-bg);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+        .paper-links a:hover { 
+            background: var(--primary-color); 
+            color: white; 
+        }
+
+        /* --- NEW TIMELINE STYLES --- */
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+
+        /* Dot on the timeline */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.1rem; /* Adjust based on border and padding */
+            top: 0.4rem;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-color);
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--primary-color);
+            box-shadow: 0 0 0 4px var(--tint-border);
+        }
+
+        .timeline-year {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .timeline-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .service-badge {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .service-badge b { color: var(--text-main); margin-right: 0.3rem; }
+
+        /* Journals Section Style */
+        .journals-block {
+            background: linear-gradient(to right, var(--tint-bg), #fff);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--tint-border);
+            margin-top: 1rem;
+        }
+        .journal-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .journal-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .journal-list li svg { fill: var(--secondary-color); width: 18px; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 5rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            nav { justify-content: center; margin-bottom: 3rem; }
+            .hero { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .profile-img-container { width: 180px; margin: 0 auto; }
+            .social-links { justify-content: center; }
+            .paper { grid-template-columns: 1fr; gap: 1.5rem; }
+            
+            /* Timeline Adjustment for mobile */
+            .timeline { padding-left: 1rem; }
+            .timeline-item { padding-left: 1rem; }
+            .timeline-item::before { left: -1.55rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#services">Services</a>
+        </nav>
+
+        <div class="hero">
+            <div class="profile-img-container">
+                <img src="images/photo.jpg" alt="Weiwei Li Profile Picture">
             </div>
-          </nav>
-        <div class="container">
-            
-            
-            <div class="content">
-                <div class="photo-info-container">
-                    <div class="photo">
-                        <img src="images/photo.jpg" alt="Weiwei Li">  
-                    </div>
-                    <div class="info">
-                        <div class="header">
-                            <h2>WEIWEI LI (李巍炜)</h2>
-                            <div class="social-media">
-                                <a href="https://scholar.google.com/citations?user=BKo87vAAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i>&nbsp;Google Scholar</a>
-                                <a href="https://www.semanticscholar.org/author/Weiwei-Li/2214949022" target="_blank"><i class="ai ai-semantic-scholar"></i>&nbsp;Semantic Scholar</a>
-                                <a href="https://orcid.org/0000-0002-4805-7714" target="_blank"><i class="ai ai-orcid"></i>&nbsp;ORCiD</a>
-                            </div>
-                        </div>
-                        <p>PhD Candidate</p>
-                        <p>School of Computer Science and Engineering</p>
-                        <p>University of Electronic Science and Technology of China</p>
-                        <p>Email: davelee.uestc <i>AT</i> gmail.com</p>
-                    </div>
+            <div class="hero-text">
+                <h1>Weiwei Li <span class="chinese-name">(李巍炜)</span></h1>
+                <div class="hero-subtitle">
+                    <span>PhD Candidate</span>
+                    <span>School of Computer Science and Engineering</span>
+                    <span>University of Electronic Science and Technology of China (UESTC)</span>
                 </div>
-                <hr>
-                <a id="about"></a>
-                <h2>About Me</h2>
-                <p>I am a PhD candidate advised by <a href="https://wenli-vision.github.io/">Wen Li</a> at the School of Computer Science and Engineering, University of Electronic Science and Technology of China. I received the B.Eng. degree from the Department of Computer Science and Technology, Shihezi University in 2017. 
-                </p>
-                <p>My research interests include Multimodal Large Language Model and robust machine learning.
-                </p>
-                <p>Please feel free to drop me an email if you have any questions or want to chat with me.
-                </p>
-                <!-- <h2>News</h2>
                 
-                <hr> -->
-                <a id="publications"></a>
-                <h2>Selected Publications</h2>
-                <div class="paper-container">
-                    <div class="paper">
-                        <div class="image"><img src="images/ssc.png"></div>
-                        <div class="paper-info">
-                            <p class="title">Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples</p>
-                            <p class="authors"><b>Weiwei Li</b>, Junzhuo Liu, Yuanyuan Ren, Yuchen Zheng, Yahao Liu, Wen Li</p>
-                            <p class="venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2025</p>
-                            <p class="func"><a class="" href="https://cvpr.thecvf.com/virtual/2025/poster/34895">[Paper]</a> <a class="" href="https://github.com/davelee-uestc/nsf_debiasing">[Code]</a> <a class="" href="nsf_cvpr25/">[Project]</a></p>
-                        </div>
-                    </div>
-                    <div class="paper">
-                        <div class="image"><img src="images/finecops.png"></div>
-                        <div class="paper-info">
-                            <p class="title">FineCops-Ref: A new Dataset and Task for Fine-Grained Compositional Referring Expression Comprehension</p>
-                            <p class="authors">Junzhuo Liu, Xuzheng Yang, <b>Weiwei Li</b>, Peng Wang</p>
-                            <p class="venue">Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024</p>
-                            <p class="func"><a href="https://aclanthology.org/2024.emnlp-main.864/">[Paper]</a> <a href="https://github.com/liujunzhuo/FineCops-Ref">[Code]</a></p>
-                        </div>
-                    </div>
-                    <div class="paper">
-                        <div class="image"><img src="images/pmdav2.png"></div>
-                        <div class="paper-info">
-                            <p class="title">PMDAv2: Multi-Scale Prototype Matching for Domain Adaptive Semantic Segmentation</p>
-                            <p class="authors"><b>Weiwei Li</b>, Yuchen Zheng, Yuanyuan Ren, Junzhuo Liu, Yahao Liu, Wen Li</p>
-                            <p class="venue">Pattern Recognition, 2025</p>
-                            <p class="func"><a class="" href="https://linkinghub.elsevier.com/retrieve/pii/S0031320325014347">[Paper]</a> <a class="" href="https://github.com/davelee-uestc/pmdav2">[Code]</a></p>
-                        </div>
-                    </div>
-                    <div class="paper">
-                        <div class="image"><img src="images/pmda.png"></div>
-                        <div class="paper-info">
-                            <p class="title">PMDA: Domain Alignment with Prototype Matching for Cross-Domain Adaptive Segmentation</p>
-                            <p class="authors"><b>Weiwei Li</b>, Yuanyuan Ren, Junzhuo Liu, Chenyang Wang, Yuchen Zheng</p>
-                            <p class="venue">IEEE International Conference on Multimedia and Expo (ICME), 2023, Oral</p>
-                            <p class="func"><a href="https://ieeexplore.ieee.org/abstract/document/10220017/">[Paper]</a> <a class="" href="https://github.com/davelee-uestc/pmdav2">[Code]</a></p>
-                        </div>
-                    </div>
-                    <div class="paper">
-                        <div class="image"><img src="images/ood.png"></div>
-                        <div class="paper-info">
-                            <p class="title">Improving Out-of-Distribution Detection with Margin-Based Prototype Learning</p>
-                            <p class="authors">Junzhuo Liu, Yuanyuan Ren, <b>Weiwei Li</b>, Yuchen Zheng, Chenyang Wang</p>
-                            <p class="venue">International Conference on Neural Information Processing (ICONIP), 2023</p>
-                            <p class="func"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8148-9_12">[Paper]</a> <a href="https://github.com/liujunzhuo/MarginOOD">[Code]</a></p>
-                        </div>
-                    </div>
+                <div class="content-text" style="margin-bottom: 1.5rem; font-weight: 500;">
+                    Email: davelee.uestc [at] gmail.com
                 </div>
-                <a id="services"></a>
-                <h2>Services</h2>
-                <ul>
-                    <li>Conference Service:</li>
-                    <ul>
-                        <li>Reviewer, CVPR, 2026</li>
-                        <li>Reviewer, WACV, 2026</li>
-                        <li>Reviewer, PRCV, 2025</li>
-                        <li>Reviewer, ICONIP, 2025</li>
-                        <li>Reviewer, CVPR, 2025</li>
-                        <li>PC Member, ICONIP, 2024</li>
-                        <li>Reviewer, ICONIP, 2023</li>
-                        <li>Reviewer, ACAIT, 2023</li>
-                    </ul>
-                    <li>Journal Reviewer:</li> 
-                    <ul>
-                        <li>IEEE Transactions on Circuits and Systems for Video Technology</li>
-                        <li>ACM Computing Surveys</li>
-                    </ul>
-                </ul>
-            </div>
-            <div class="footer">
-                <p>&copy; WEIWEI LI 2025. All rights reserved.</p>
+
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=BKo87vAAAAAJ&hl=en" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                        Google Scholar
+                    </a>
+                    <a href="https://www.semanticscholar.org/author/Weiwei-Li/2214949022" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                        Semantic Scholar
+                    </a>
+                    <a href="https://orcid.org/0000-0002-4805-7714" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416z"/></svg>
+                        ORCID
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "924cb8deefbf4a83aadd1c2926da6b1e"}'></script><!-- End Cloudflare Web Analytics -->
-    </body>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="content-text">
+                <p style="margin-bottom: 1.5rem;">
+                    I am a PhD candidate advised by <a href="https://wenli-vision.github.io/">Wen Li</a> at the School of Computer Science and Engineering, University of Electronic Science and Technology of China (UESTC). I received my B.Eng. degree from the Department of Computer Science and Technology, Shihezi University in 2017.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    My research interests include <b>Multimodal Large Language Models (MLLMs)</b> and <b>Robust Machine Learning</b>.
+                </p>
+                <p>
+                    Please feel free to drop me an email if you have any questions or want to chat with me.
+                </p>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Selected Publications</h2>
+            
+            <article class="paper">
+                <div class="paper-img">
+                    <img src="images/ssc.png" alt="Let Samples Speak">
+                </div>
+                <div class="paper-info">
+                    <a href="https://cvpr.thecvf.com/virtual/2025/poster/34895" class="paper-title">Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples</a>
+                    <div class="paper-authors">
+                        <span class="me">Weiwei Li</span>, Junzhuo Liu, Yuanyuan Ren, Yuchen Zheng, Yahao Liu, Wen Li
+                    </div>
+                    <div class="paper-venue">CVPR 2025</div>
+                    <div class="paper-links">
+                        <a href="https://cvpr.thecvf.com/virtual/2025/poster/34895">Paper</a>
+                        <a href="https://github.com/davelee-uestc/nsf_debiasing">Code</a>
+                        <a href="nsf_cvpr25/">Project</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-img">
+                    <img src="images/finecops.png" alt="FineCops-Ref">
+                </div>
+                <div class="paper-info">
+                    <a href="https://aclanthology.org/2024.emnlp-main.864/" class="paper-title">FineCops-Ref: A new Dataset and Task for Fine-Grained Compositional Referring Expression Comprehension</a>
+                    <div class="paper-authors">
+                        Junzhuo Liu, Xuzheng Yang, <span class="me">Weiwei Li</span>, Peng Wang
+                    </div>
+                    <div class="paper-venue">EMNLP 2024</div>
+                    <div class="paper-links">
+                        <a href="https://aclanthology.org/2024.emnlp-main.864/">Paper</a>
+                        <a href="https://github.com/liujunzhuo/FineCops-Ref">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-img">
+                    <img src="images/pmdav2.png" alt="PMDAv2">
+                </div>
+                <div class="paper-info">
+                    <a href="https://linkinghub.elsevier.com/retrieve/pii/S0031320325014347" class="paper-title">PMDAv2: Multi-Scale Prototype Matching for Domain Adaptive Semantic Segmentation</a>
+                    <div class="paper-authors">
+                        <span class="me">Weiwei Li</span>, Yuchen Zheng, Yuanyuan Ren, Junzhuo Liu, Yahao Liu, Wen Li
+                    </div>
+                    <div class="paper-venue">Pattern Recognition, 2025</div>
+                    <div class="paper-links">
+                        <a href="https://linkinghub.elsevier.com/retrieve/pii/S0031320325014347">Paper</a>
+                        <a href="https://github.com/davelee-uestc/pmdav2">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-img">
+                    <img src="images/pmda.png" alt="PMDA">
+                </div>
+                <div class="paper-info">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10220017/" class="paper-title">PMDA: Domain Alignment with Prototype Matching for Cross-Domain Adaptive Segmentation</a>
+                    <div class="paper-authors">
+                        <span class="me">Weiwei Li</span>, Yuanyuan Ren, Junzhuo Liu, Chenyang Wang, Yuchen Zheng
+                    </div>
+                    <div class="paper-venue">ICME 2023 (<strong>Oral</strong>)</div>
+                    <div class="paper-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10220017/">Paper</a>
+                        <a href="https://github.com/davelee-uestc/pmdav2">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-img">
+                    <img src="images/ood.png" alt="OOD Detection">
+                </div>
+                <div class="paper-info">
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-99-8148-9_12" class="paper-title">Improving Out-of-Distribution Detection with Margin-Based Prototype Learning</a>
+                    <div class="paper-authors">
+                        Junzhuo Liu, Yuanyuan Ren, <span class="me">Weiwei Li</span>, Yuchen Zheng, Chenyang Wang
+                    </div>
+                    <div class="paper-venue">ICONIP 2023</div>
+                    <div class="paper-links">
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-99-8148-9_12">Paper</a>
+                        <a href="https://github.com/liujunzhuo/MarginOOD">Code</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Services</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <span class="service-badge"><b>CVPR</b> Reviewer</span>
+                        <span class="service-badge"><b>WACV</b> Reviewer</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <span class="service-badge"><b>CVPR</b> Reviewer</span>
+                        <span class="service-badge"><b>PRCV</b> Reviewer</span>
+                        <span class="service-badge"><b>ICONIP</b> Reviewer</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <span class="service-badge"><b>ICONIP</b> PC Member</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <span class="service-badge"><b>ICONIP</b> Reviewer</span>
+                        <span class="service-badge"><b>ACAIT</b> Reviewer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="journals-block">
+                <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">Journal Reviewer</h3>
+                <ul class="journal-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        ACM Computing Surveys
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2025 Weiwei Li. All rights reserved.
+        </footer>
+    </div>
+
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "924cb8deefbf4a83aadd1c2926da6b1e"}'></script>
+</body>
 </html>
